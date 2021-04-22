@@ -1,6 +1,18 @@
 import React from "react"
-import "./src/styles/styles.css"
+import styled from "styled-components"
+import "normalize.css"
+import BackgroundImage from "./src/components/BackgroundImage"
 
 export const wrapRootElement = ({ element }) => {
-  return <div className="min-h-screen h-full">{element}</div>
+  return (
+    <WrapperElement>
+      {element}
+      <BackgroundImage />
+    </WrapperElement>
+  )
 }
+
+const WrapperElement = styled.div`
+  height: 100%;
+  min-height: 100vh;
+`

@@ -1,19 +1,49 @@
 import React from "react"
-import Container from "./Container"
+import { Link } from "gatsby"
+import styled from "styled-components"
+import { Container } from "./styled/global"
 
 import Nav from "./Nav"
 
 const Header = () => {
   return (
-    <header className="py-2 bg-gray-900">
+    <StyledHeader>
       <Container>
-        <div className="flex flex-col justify-between items-center text-gray-50 lg:flex-row">
-          <div className="text-4xl font-bold mb-2">Demon's Souls</div>
+        <HeaderInner>
+          <SiteTitle>
+            <Link to="/">Demon's Souls Wiki</Link>
+          </SiteTitle>
           <Nav />
-        </div>
+        </HeaderInner>
       </Container>
-    </header>
+    </StyledHeader>
   )
 }
+
+const StyledHeader = styled.header`
+  padding: 0.5rem 0;
+  background-color: rgb(25, 25, 25);
+`
+
+const HeaderInner = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+
+  @media (min-width: 61.25em) {
+    flex-direction: row;
+  }
+`
+
+const SiteTitle = styled.h1`
+  display: block;
+  margin: 0.5em;
+  color: white;
+  a {
+    color: white;
+  }
+`
 
 export default Header

@@ -1,12 +1,13 @@
 import * as React from "react"
-import Container from "../components/Container"
-import Layout from "../components/layout"
+import styled from "styled-components"
+import { Container, ContentBox } from "../components/styled/global"
+import Layout from "../components/Layout"
 
 const IndexPage = () => {
   return (
     <Layout>
-      <Container className="mt-14">
-        <div className="mx-auto prose lg:prose-xl bg-gray-900 text-gray-50 p-6 rounded">
+      <StyledContainer>
+        <ContentBox>
           <h1>Welcome to Boletaria</h1>
           <p>
             Demon's Souls takes place in the kingdom of Boletaria. In ancient
@@ -41,10 +42,14 @@ const IndexPage = () => {
             kills the Maiden in Black, they serve the Old One and sate their
             hunger for souls as the fog continues to spread.
           </p>
-        </div>
-      </Container>
+        </ContentBox>
+      </StyledContainer>
     </Layout>
   )
 }
+
+const StyledContainer = styled(Container)`
+  margin-top: 2rem;
+`
 
 export default IndexPage

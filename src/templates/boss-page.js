@@ -1,13 +1,34 @@
 import React from "react"
-import Container from "../components/Container"
-import Layout from "../components/layout"
+import styled from "styled-components"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
+import parse from "html-react-parser"
+import { Container, ContentBox } from "../components/styled/global"
 
-const BossPage = props => {
+const BossPage = ({ data }) => {
+  const content = data.markdownRemark
   return (
     <Layout>
-      <Container>{JSON.stringify(props, null, 2)}</Container>
+      <StyledContainer>
+        <ContentBox>{parse(content.html)}</ContentBox>
+      </StyledContainer>
     </Layout>
   )
 }
+
+export const bossQuery = graphql`
+  query BossQuery($slug: String) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+      }
+      html
+    }
+  }
+`
+
+const StyledContainer = styled(Container)`
+  margin-top: 2em;
+`
 
 export default BossPage
