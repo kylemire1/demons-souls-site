@@ -6,8 +6,8 @@ const IndexPage = () => {
   return (
     <Layout>
       <Container className="mt-14">
-        <div className="mx-auto prose bg-white p-6 rounded">
-          <h1 className="">Welcome to Boletaria</h1>
+        <div className="mx-auto prose lg:prose-xl bg-gray-900 text-gray-50 p-6 rounded">
+          <h1>Welcome to Boletaria</h1>
           <p>
             Demon's Souls takes place in the kingdom of Boletaria. In ancient
             times, due to the misuse of magic known as the Soul Arts, Boletaria

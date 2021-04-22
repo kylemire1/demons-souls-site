@@ -14,6 +14,23 @@ module.exports = {
       red: colors.rose,
       yellow: colors.amber,
     },
+    extend: {
+      typography: () => ({
+        DEFAULT: {
+          css: {
+            h1: {
+              color: colors.gray[50],
+            },
+            h2: {
+              color: colors.gray[50],
+            },
+          },
+        },
+      }),
+      zIndex: {
+        "-1": "-1",
+      },
+    },
   },
   variants: {
     extend: {},

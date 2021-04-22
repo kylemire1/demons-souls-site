@@ -30,6 +30,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "bosses",
+        path: `${__dirname}/src/bosses`,
+      },
+    },
+    `gatsby-plugin-mdx`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
