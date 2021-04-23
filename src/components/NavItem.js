@@ -9,7 +9,6 @@ const NavItem = ({ children, to }) => {
 const StyledLink = styled(Link)`
   white-space: nowrap;
   color: white;
-  margin-bottom: 1rem;
 
   :hover,
   :focus {
@@ -17,6 +16,10 @@ const StyledLink = styled(Link)`
   }
   & + & {
     margin-left: 1rem;
+  }
+
+  @media (max-width: 61.25em) {
+    margin-bottom: 1rem;
   }
 `
 
